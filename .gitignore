@@ -1,5 +1,3 @@
-LeapFrogAcademyTestAutomationGroup1.iml
-.gitignore
-/*.iml
+**/*.iml
 /.idea
 /target
