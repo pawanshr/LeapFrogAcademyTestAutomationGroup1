@@ -47,6 +47,7 @@ public class LoginTest {
             loginPage.login();
             driver.quit();
         }
+
     @Test
     public void testThatIncorrectUserAndIncorrectPassCanLogin(){
         this.driver=new FirefoxDriver();
@@ -57,19 +58,8 @@ public class LoginTest {
         loginPage.login();
         driver.quit();
     }
-    @Test
-<<<<<<< HEAD
-    public void testThatCorrectUserAndPassCanLogin(){
 
-        this.driver = new FirefoxDriver();
-        this.driver.get("https://wordpress.com/wp-login.php");
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("chandru713");
-        loginPage.setPassword("Chandr@713");
-        loginPage.login();
-        driver.quit();
-    }
-=======
+    @Test
     public void testThatIncorrectUserAndIncorrectPassCanLogin1(){
         this.driver=new FirefoxDriver();
         this.driver.get("https://wordpress.com/wp-login.php");
@@ -80,5 +70,4 @@ public class LoginTest {
         driver.quit();
     }
 
->>>>>>> 6130ba0ab6eaaa1e4396d73ed46a1caed46e0e1c
 }
