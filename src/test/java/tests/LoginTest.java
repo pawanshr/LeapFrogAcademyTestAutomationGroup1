@@ -57,4 +57,15 @@ public class LoginTest {
         loginPage.login();
         driver.quit();
     }
+    @Test
+    public void testThatIncorrectUserAndIncorrectPassCanLogin1(){
+        this.driver=new FirefoxDriver();
+        this.driver.get("https://wordpress.com/wp-login.php");
+        LoginPage loginPage=new LoginPage(driver);
+        loginPage.setUsername("anupam");
+        loginPage.setPassword("anupam987");
+        loginPage.login();
+        driver.quit();
+    }
+
 }
