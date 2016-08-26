@@ -19,8 +19,8 @@ public class LoginTest {
         this.driver = new FirefoxDriver();
         this.driver.get("https://wordpress.com/wp-login.php");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("samankapali.kop");
-        loginPage.setPassword("qwerty123");
+        loginPage.setUsername("suman108215");
+        loginPage.setPassword("sulen108215");
         loginPage.login();
     }
 
