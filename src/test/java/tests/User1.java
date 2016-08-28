@@ -26,6 +26,16 @@ public class User1 {
         user.Mysite();
 
         user.People();
+
+        user.Add();
+
+        user.setUsername("nirdoshbista");
+
+        user.DM();
+
+        user.setCustomMessage("Hello Nirdosh");
+
+        user.invitation();
     }
 
 }
