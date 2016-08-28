@@ -4,12 +4,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.LoginPage;
-import pageobjects.User;
+import pageobjects.UserPage;
 
 /**
  * Created by NISCHIT ARYAL on 8/28/2016.
  */
-public class User1 {
+public class UserTest {
     WebDriver driver;
 
     @Test
@@ -22,20 +22,24 @@ public class User1 {
         loginPage.setPassword("Autom@te1");
         loginPage.login();
 
-        User user =new User(driver);
-        user.Mysite();
+        UserPage userPage =new UserPage(driver);
+        userPage.Mysite();
 
-        user.People();
 
-        user.Add();
+        userPage.People();
 
-        user.setUsername("nirdoshbista");
+        userPage.Add();
 
-        user.DM();
+        userPage.setUsername("nirdoshbista");
 
-        user.setCustomMessage("Hello Nirdosh");
+        userPage.DM();
 
-        user.invitation();
+        userPage.setCustomMessage("Hello Nirdosh");
+
+        userPage.invitation();
+
+        userPage.People();
+
     }
 
 }

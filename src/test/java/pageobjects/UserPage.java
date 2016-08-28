@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public  class User {
+public  class UserPage {
     WebDriver driver;
 
     @FindBy(className = "masterbar__item-content")
@@ -33,7 +33,7 @@ public  class User {
     WebElement invitation;
 
 
-    public User(WebDriver driver) {
+    public UserPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
