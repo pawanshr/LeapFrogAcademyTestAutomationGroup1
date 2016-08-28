@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by dell on 8/28/2016.
  */
-public class Page_page {
+public class PagePage {
 
         WebDriver driver;
 
@@ -16,7 +16,7 @@ public class Page_page {
         WebElement page_button;
 
 
-        public Page_page(WebDriver driver) {
+        public PagePage(WebDriver driver) {
             this.driver = driver;
             PageFactory.initElements(driver, this);
         }

@@ -3,9 +3,9 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pageobjects.AddPagePage;
 import pageobjects.LoginPage;
-import pageobjects.Page_page;
-import pageobjects.Page_publish;
+import pageobjects.AddPagePage;
 
 import java.sql.Driver;
 
@@ -30,7 +30,7 @@ public class Test_page {
         /*Page_page page_page = new Page_page(driver);
         page_page.login();*/
 
-        Page_publish page_publish =new Page_publish(driver);
+        AddPagePage page_publish =new AddPagePage(driver);
         page_publish.setTitle("Title1");
        // page_publish.setEditor("This came from code");
         page_publish.setPublishButton();

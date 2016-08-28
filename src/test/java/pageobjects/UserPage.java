@@ -6,7 +6,7 @@ import org.openqa.selenium.internal.FindsByXPath;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public  class User {
+public  class UserPage {
     WebDriver driver;
 
     @FindBy(className = "masterbar__item-content")
@@ -16,7 +16,7 @@ public  class User {
     WebElement People;
 
 
-    public User(WebDriver driver) {
+    public UserPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

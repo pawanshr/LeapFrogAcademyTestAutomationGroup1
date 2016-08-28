@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by dell on 8/28/2016.
  */
-public class Page_publish {
+public class AddPagePage {
     WebDriver driver;
 
     @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[1]/div[2]/div[3]/div/textarea")
@@ -20,7 +20,7 @@ public class Page_publish {
     @FindBy (xpath =".//*[@id='primary']/div/div[2]/div[2]/div[2]/div[1]/div[3]/div/button[1]" )
         WebElement publishbutton;
 
-    public Page_publish(WebDriver driver) {
+    public AddPagePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
