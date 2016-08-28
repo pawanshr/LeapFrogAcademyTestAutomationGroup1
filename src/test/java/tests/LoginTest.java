@@ -26,6 +26,26 @@ public class LoginTest {
     }
 
     @Test
+    public void testnousernameLogin(){
+
+        this.driver = new FirefoxDriver();
+        this.driver.get("https://wordpress.com/wp-login.php");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setPassword("qwerty123");
+        loginPage.login();
+    }
+
+    @Test
+    public void testnopasswordLogin(){
+
+        this.driver = new FirefoxDriver();
+        this.driver.get("https://wordpress.com/wp-login.php");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUsername("samankapali.kop");
+        loginPage.login();
+    }
+
+    @Test
     public void testThatIncorrectUserAndPassCanLogin(){
 
         this.driver=new FirefoxDriver();
