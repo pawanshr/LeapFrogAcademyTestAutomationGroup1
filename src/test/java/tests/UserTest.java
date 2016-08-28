@@ -9,7 +9,7 @@ import pageobjects.UserPage;
 /**
  * Created by NISCHIT ARYAL on 8/28/2016.
  */
-public class User {
+public class UserTest {
     WebDriver driver;
 
     @Test

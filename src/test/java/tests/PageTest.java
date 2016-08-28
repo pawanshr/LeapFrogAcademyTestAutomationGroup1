@@ -12,7 +12,7 @@ import java.sql.Driver;
 /**
  * Created by NISCHIT ARYAL on 8/26/2016.
  */
-public class Test_page {
+public class PageTest {
     WebDriver driver;
 
 
