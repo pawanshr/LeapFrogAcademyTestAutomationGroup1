@@ -1,5 +1,6 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +16,9 @@ public class LoggedinPage {
     @FindBy(xpath=".//*[@id='header']/a[1]/span")
     WebElement clickMySite;
 
+    @FindBy (xpath =".//*[@id='secondary']/div/ul/div[1]/li[2]/ul/li[1]/a[2]")
+    WebElement directpost;
+
     @FindBy(xpath = ".//*[@id='secondary']/div/ul/div[1]/li[2]/ul/li[1]/a[1]")
     WebElement clickBlogPost;
 
@@ -24,22 +28,41 @@ public class LoggedinPage {
     @FindBy(xpath =".//*[@id='primary']/div/div[2]/div[1]/div[2]/div[3]/div/textarea")
     WebElement titleText;
 
-    @FindBy(xpath = ".//*[@id='tinymce']/p")
-    WebElement bodyText;
+    @FindBy(id = "tinymce-1_ifr")
+    WebElement frameName;
+
+    @FindBy(id="tinymce")
+    public WebElement bodyText;
 
     public LoggedinPage(WebDriver driver) {
         this.dvr = driver;
         PageFactory.initElements(driver, this);
     }
-
+    //Click on "My Site"
     public void MySite(){ clickMySite.click();}
 
+    //Click on "Blog Posts"
     public void blogPost(){ clickBlogPost.click();}
 
+    //Click on "Add post"
     public void addPost(){clickonAdd.click();}
+
+    public void directAddPost(){
+        directpost.click();
+    }
 
     public void addTitle(String postTitle){
         titleText.sendKeys(postTitle);
+    }
+
+    public void addBody(String bodyContent){
+        bodyText.sendKeys(bodyContent);
+    }
+
+    public void addBody(String bodyContent, WebDriver driver){
+        this.dvr = driver;
+        driver.switchTo().frame(frameName);
+        bodyText.sendKeys(bodyContent);
     }
 
 }
