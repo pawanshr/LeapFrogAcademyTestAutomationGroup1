@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by Katun on 28/08/2016.
  */
@@ -33,6 +35,19 @@ public class LoggedinPage {
 
     @FindBy(id="tinymce")
     public WebElement bodyText;
+
+    //SWITCH TO DEFAULT FRAME
+    @FindBy(className = "web-preview__frame")
+    public WebElement defaultFrame;
+    @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[2]/div[2]/div[1]/div[3]/button")
+    WebElement previewButton;
+
+    //@FindBy(xpath = "html/body/div[7]/div/div[2]/div[1]/button")
+    @FindBy (className = "web-preview__close")
+    WebElement closeButton;
+
+    @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[2]/div[2]/div[1]/div[3]/div/button[1]")
+    WebElement publishButton;
 
     public LoggedinPage(WebDriver driver) {
         this.dvr = driver;
@@ -65,4 +80,15 @@ public class LoggedinPage {
         bodyText.sendKeys(bodyContent);
     }
 
+    public void preview(){
+        dvr.switchTo().defaultContent();
+        previewButton.click();
+        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        closeButton.click();
+        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    }
+
+    public void publish() {
+        publishButton.click();
+    }
 }

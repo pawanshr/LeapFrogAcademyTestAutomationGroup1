@@ -58,7 +58,12 @@ public class blogPostTest {
 
         blogpostLogin.addBody(PostBody, dvr);
 
-        //dvr.quit();
+        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        blogpostLogin.preview();
+
+        blogpostLogin.publish();
+        dvr.quit();
     }
 
 
