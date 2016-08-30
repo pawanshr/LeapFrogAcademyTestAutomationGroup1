@@ -12,19 +12,12 @@ import java.sql.Driver;
 /**
  * Created by NISCHIT ARYAL on 8/26/2016.
  */
-public class PageTest {
-    WebDriver driver;
+public class PageTest extends BaseTest{
+
 
 
     @Test
     public void login(){
-
-        this.driver = new FirefoxDriver();
-        this.driver.get("https://wordpress.com/page/leapfrogacademytestautomationgroup1.wordpress.com");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.setUsername("nirdoshbista");
-        loginpage.setPassword("admin123!@#");
-        loginpage.login();
 
 
         /*Page_page page_page = new Page_page(driver);

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.concurrent.TimeUnit;
+
 public  class UserPage {
     WebDriver driver;
 
@@ -40,13 +42,18 @@ public  class UserPage {
 
     public void Mysite(){
         Mysite.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     public void People(){
-            People.click();
-        }
+        People.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
-    public void Add(){Add.click();}
+    public void Add(){
+        Add.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
     public void setUsername(String username){Username.sendKeys(username);}
 
@@ -56,7 +63,10 @@ public  class UserPage {
 
     public void setCustomMessage(String customMessage){CustomMessage.sendKeys(customMessage);}
 
-    public void invitation() {invitation.click();}
+    public void invitation() {
+        invitation.click();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 
 
 }

@@ -1,30 +1,26 @@
 package tests;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.LoginPage;
 import pageobjects.UserPage;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by NISCHIT ARYAL on 8/28/2016.
  */
-public class UserTest {
-    WebDriver driver;
+public class UserTest extends BaseTest{
 
     @Test
-    public void testusernamelist(){
-        this.driver = new FirefoxDriver();
-        this.driver.get("https://wordpress.com/wp-login.php");
+    public void testThatUsernamesAreListed(){
 
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("shilpisam");
-        loginPage.setPassword("Autom@te1");
-        loginPage.login();
 
         UserPage userPage =new UserPage(driver);
         userPage.Mysite();
-
 
         userPage.People();
 
@@ -40,6 +36,22 @@ public class UserTest {
 
         userPage.People();
 
+
     }
 
+    @Test
+    public void testThatUsernameCanBeAdded() {
+
+    }
+
+
+    @Test
+    public void testThatUsernameCanBeDeleted() {
+
+    }
+
+    @After
+    public void teardown() {
+        driver.quit();
+    }
 }

@@ -35,6 +35,7 @@ public class LoginPage {
 
     public void login() {
         loginbutton.click();
+
     }
 
 
