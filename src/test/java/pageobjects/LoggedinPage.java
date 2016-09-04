@@ -91,4 +91,6 @@ public class LoggedinPage {
     public void publish() {
         publishButton.click();
     }
+
+    public String getMySiteText() { return clickMySite.getText(); }
 }
