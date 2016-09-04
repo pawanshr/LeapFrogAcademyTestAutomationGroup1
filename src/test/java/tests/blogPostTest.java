@@ -38,11 +38,11 @@ public class blogPostTest {
         loginPage.login();
 
 
-        dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         blogpostLogin.MySite();
 
-        dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         blogpostLogin.blogPost();
 
@@ -54,16 +54,27 @@ public class blogPostTest {
 
         blogpostLogin.addTitle("Title for the text below");
 
-        dvr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         blogpostLogin.addBody(PostBody, dvr);
 
-        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         blogpostLogin.preview();
 
         blogpostLogin.publish();
-        dvr.quit();
+
+        //dvr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        blogpostLogin.deletePost();
+
+        dvr.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+
+        blogpostLogin.trashPostinpreview();
+
+
+
+        //dvr.quit();
     }
 
 

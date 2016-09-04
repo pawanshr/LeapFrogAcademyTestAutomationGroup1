@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class LoggedinPage {
 
     WebDriver dvr;
-
+    //----------Before publishing blog post-----
     @FindBy(xpath=".//*[@id='header']/a[1]/span")
     WebElement clickMySite;
 
@@ -83,12 +83,33 @@ public class LoggedinPage {
     public void preview(){
         dvr.switchTo().defaultContent();
         previewButton.click();
-        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(500, TimeUnit.SECONDS);
         closeButton.click();
-        dvr.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //dvr.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
     }
 
     public void publish() {
         publishButton.click();
     }
+    //------------------------------------------------------
+    //-----------------After publishing---------------------
+
+    @FindBy(className = "card dialog")
+    WebElement dialogBox;
+
+    @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[1]/div[2]/div[1]/div[2]/button[3]")
+    WebElement trashButton;
+
+    @FindBy(xpath = "//button[@class='button is-primary']")
+    WebElement dialogTrashButton;
+
+    public void deletePost(){
+        trashButton.click();
+    }
+
+    public void trashPostinpreview(){
+        dialogTrashButton.click();
+    }
+
+
 }
