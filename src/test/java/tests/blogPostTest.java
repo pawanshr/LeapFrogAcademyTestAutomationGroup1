@@ -64,11 +64,11 @@ public class blogPostTest {
 
         blogpostLogin.publish();
 
-        //dvr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        dvr.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         blogpostLogin.deletePost();
 
-        dvr.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+        dvr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         blogpostLogin.trashPostinpreview();
 
