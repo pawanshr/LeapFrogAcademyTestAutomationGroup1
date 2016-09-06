@@ -16,7 +16,7 @@ public class BaseTest {
     @Before
     public void setupTestMethod() {
         this.driver = new FirefoxDriver();
-        this.driver.get("https://wordpress.com/wp-login.php");
+        this.driver.get("http://localhost/wordpress/wp-login.php");
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.setUsername("shilpisam");
