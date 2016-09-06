@@ -19,6 +19,8 @@ public class LoginPage {
     @FindBy(id="wp-submit")
     WebElement loginbutton;
 
+    @FindBy(className = "click-register")
+    WebElement resgister;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -32,6 +34,10 @@ public class LoginPage {
     public void setPassword(String password) {
         passwd.sendKeys(password);
     }
+
+    //public String checkFortheLoginbutton(){return loginbutton.getCssValue();}
+
+    public String checkForregistrationlink(){return resgister.getText();}
 
     public void login() {
         loginbutton.click();

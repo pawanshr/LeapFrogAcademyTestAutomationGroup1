@@ -93,7 +93,10 @@ public class LoggedinPage {
     }
 
 
+
+
     public String getMySiteText() { return clickMySite.getText(); }
+
 
     //------------------------------------------------------
     //-----------------After publishing---------------------
