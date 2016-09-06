@@ -9,7 +9,7 @@ public class blogposttestinlocalhost {
     @Test
     public void blogposttest(){
         this.dvr=new FirefoxDriver();
-        
+
     }
 
 }

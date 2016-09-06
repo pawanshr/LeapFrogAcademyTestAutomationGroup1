@@ -92,7 +92,11 @@ public class LoggedinPage {
         publishButton.click();
     }
 
-    public void getMysite(){clickMySite.getText();}
+
+
+
+    public String getMySiteText() { return clickMySite.getText(); }
+
 
     //------------------------------------------------------
     //-----------------After publishing---------------------
