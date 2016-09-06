@@ -17,7 +17,7 @@ public class LoginTest {
     public void testThatCorrectUserAndPassCanLogin(){
 
         this.driver = new FirefoxDriver();
-        this.driver.get("https://wordpress.com/wp-login.php");
+        this.driver.get("https://localhost/wordpress/wp-login.php");
 
 
         LoginPage loginPage = new LoginPage(driver);
