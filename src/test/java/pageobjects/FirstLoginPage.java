@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class FirstLoginPage {
     WebDriver dvr;
 
-    FirstLoginPage(WebDriver driver){
+    public FirstLoginPage(WebDriver driver){
         this.dvr = driver;
         PageFactory.initElements(driver, this);
     }
@@ -33,6 +33,18 @@ public class FirstLoginPage {
 
     @FindBy(xpath = ".//*[@id='loginform']/p[2]/label")
     WebElement passwordLabel;
+
+    public String checkforlostyourpassword(){
+        return lostyourpasswordlink.getText();
+    }
+
+    public String checkforUsernameofEmailLabel() {
+        return  usernameoremailLabel.getText();
+    }
+
+    public String checkforPasswordLabel(){
+        return passwordLabel.getText();
+    }
 
     public void setuernameinusernametextbox(String Username){
         usernameinputtextbox.sendKeys(Username);
