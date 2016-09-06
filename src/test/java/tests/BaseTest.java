@@ -29,7 +29,7 @@ public class BaseTest {
         Assert.assertEquals("Password",localloginPage.checkforPasswordLabel());
 
         loginPage.setUsername("admin");
-        loginPage.setPassword("qwerty123");
+        loginPage.setPassword("admin");
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
