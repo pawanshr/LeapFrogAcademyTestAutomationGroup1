@@ -20,7 +20,7 @@ public class Secondpageafterlogin {
     @FindBy(xpath =  ".//*[@id='menu-posts']/a/div[3]")
     WebElement forblogposts;
 
-    @FindBy(xpath = ".//*[@id='menu-dashboard']/ul/li[2]/a")
+    @FindBy(className = "wp-first-item current")
     WebElement forgoinghome;
 
     @FindBy(xpath = ".//*[@id='menu-dashboard']/ul/li[3]/a")
@@ -30,4 +30,6 @@ public class Secondpageafterlogin {
         forblogposts.click();
     }
 
+    public String checkforhome(){ return forgoinghome.getText();}
+    public String checkforupdates(){return forupdates.getText();}
 }
