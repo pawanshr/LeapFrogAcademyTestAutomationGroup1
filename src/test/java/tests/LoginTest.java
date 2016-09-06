@@ -66,8 +66,7 @@ public class LoginTest extends BaseTest{
 
     @Test
     public void testThatIncorrectUserAndIncorrectPassCanLogin(){
-        this.driver=new FirefoxDriver();
-        this.driver.get("https://wordpress.com/wp-login.php");
+
         LoginPage loginPage=new LoginPage(driver);
         loginPage.setUsername("nirdoshbista1");
         loginPage.setPassword("admin123!@#1");

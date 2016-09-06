@@ -1,8 +1,10 @@
 package tests;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.LoginPage;
 import pageobjects.LoggedinPage;
 
@@ -14,10 +16,12 @@ import java.util.concurrent.TimeUnit;
 public class blogPostTest {
 
     WebDriver dvr;
+    WebDriverWait dvrWait;
 
     @Test
     public void startABlogPost(){
         this.dvr = new FirefoxDriver();
+        dvrWait = new WebDriverWait(dvr,1000);
 
         String PostBody = "Lorem ipsum dolor sit amet, sed id illud nostro similique, natum placerat perpetua quo ex, mea dolore nonumes cu. His an dicit recteque imperdiet. Vix id melius iudicabit. Pri minim eligendi dissentiunt eu, cetero electram et eos, utinam accusamus sententiae id nam. Ne harum movet appetere usu, ponderum accusamus appellantur ut cum, qui ei solet animal. Mentitum deseruisse nam at, cum id everti patrioque, vis labore eleifend iracundia ne.\n" +
                 "\n" +
@@ -33,6 +37,10 @@ public class blogPostTest {
         LoginPage loginPage = new LoginPage(dvr);
         LoggedinPage blogpostLogin = new LoggedinPage(dvr);
 
+
+        //Assert.assertEquals("Log In", loginPage.checkFortheLoginbutton());
+        Assert.assertEquals("Register", loginPage.checkForregistrationlink());
+
         loginPage.setUsername("chandru713");
         loginPage.setPassword("Chandr@713");
         loginPage.login();
@@ -45,8 +53,6 @@ public class blogPostTest {
         //dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         blogpostLogin.blogPost();
-
-        dvr.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         blogpostLogin.addPost();
 
