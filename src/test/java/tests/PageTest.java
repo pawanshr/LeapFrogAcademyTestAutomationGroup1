@@ -3,11 +3,12 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import pageobjects.AddPagePage;
-import pageobjects.LoginPage;
+import org.openqa.selenium.support.PageFactory;
+import pageobjects.*;
 import pageobjects.AddPagePage;
 
 import java.sql.Driver;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by NISCHIT ARYAL on 8/26/2016.
@@ -15,18 +16,21 @@ import java.sql.Driver;
 public class PageTest extends BaseTest{
 
 
-
     @Test
-    public void login(){
+    public void verifyPageAddition()
+    {
+        PagePage addingPage = new PagePage();
+        PageFactory.initElements(driver,addingPage);
+        addingPage.setPages();
+        addingPage.setAddNewPage();
+        addingPage.setTitleOfNewPage();
+        addingPage.setAddMedia();
+        addingPage.setSaveDrafts();
+        addingPage.setPreviewPage();
+        addingPage.setPublishPage();
+        addingPage.setMoveToTrash();
 
-
-        /*Page_page page_page = new Page_page(driver);
-        page_page.login();*/
-
-        AddPagePage page_publish =new AddPagePage(driver);
-        page_publish.setTitle("Title1");
-       // page_publish.setEditor("This came from code");
-        page_publish.setPublishButton();
+        driver.quit();
     }
 
 }

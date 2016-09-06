@@ -11,13 +11,14 @@ import pageobjects.Secondpageafterlogin;
 public class Blogpostinlocalhost extends BaseTest {
     @Test
     public void blogposttest(){
-        this.driver = new FirefoxDriver();
-        Secondpageafterlogin pageafterlogin = new Secondpageafterlogin(driver);
+        Secondpageafterlogin afterlogin = new Secondpageafterlogin(driver);
 
-        Assert.assertEquals("Home", pageafterlogin.checkforhome());
-        Assert.assertEquals("Updates", pageafterlogin.checkforupdates());
+        Assert.assertEquals("Home",afterlogin.checkforhome());
+        System.out.println("Home button found.");
+        Assert.assertEquals("Users", afterlogin.checkforusersoption());
+        System.out.println("Users option found.");
 
-        pageafterlogin.clickthePosts();
+        afterlogin.clickthePosts();
     }
 
 }
