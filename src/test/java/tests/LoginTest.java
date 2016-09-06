@@ -1,8 +1,6 @@
 package tests;
 
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.LoggedinPage;
@@ -11,9 +9,14 @@ import pageobjects.LoginPage;
 /**
  * Created by i80921 on 8/23/2016.
  */
-public class LoginTest extends BaseTest{
+public class LoginTest{
     WebDriver driver;
 
+    @Before
+    public void setup() {
+        this.driver = new FirefoxDriver();
+        this.driver.get("http://localhost/wordpress/wp-login.php");
+    }
 
     @Test
     public void testThatCorrectUserAndPassCanLogin(){
@@ -41,7 +44,7 @@ public class LoginTest extends BaseTest{
     public void testnopasswordLogin(){
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("samankapali.kop");
+        loginPage.setUsername("admin");
         loginPage.login();
     }
 
@@ -84,4 +87,8 @@ public class LoginTest extends BaseTest{
 
     }
 
+    @After
+    public void teardown(){
+        driver.quit();
+    }
 }
