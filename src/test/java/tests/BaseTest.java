@@ -20,8 +20,8 @@ public class BaseTest {
         this.driver.get("http://localhost/wordpress/wp-login.php");
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.setUsername("shilpisam");
-        loginPage.setPassword("Autom@te1");
+        loginPage.setUsername("admin");
+        loginPage.setPassword("admin");
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
