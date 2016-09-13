@@ -16,6 +16,9 @@ public class FirstLoginPage {
         PageFactory.initElements(driver, this);
     }
 
+    String a;
+
+
     @FindBy(id = "user_login")
     WebElement usernameinputtextbox;
 

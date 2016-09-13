@@ -1,14 +1,8 @@
 package tests;
 
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import pageobjects.LoginPage;
 import pageobjects.UserPage;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by NISCHIT ARYAL on 8/28/2016.

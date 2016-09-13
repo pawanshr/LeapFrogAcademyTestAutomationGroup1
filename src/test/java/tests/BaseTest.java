@@ -28,7 +28,7 @@ public class BaseTest {
         Assert.assertEquals("Username or Email",localloginPage.checkforUsernameofEmailLabel());
         Assert.assertEquals("Password",localloginPage.checkforPasswordLabel());
 
-        loginPage.setUsername("admin");
+        loginPage.setUsername("admind");
         loginPage.setPassword("admin");
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

@@ -1,14 +1,8 @@
 package tests;
 
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import pageobjects.*;
-import pageobjects.AddPagePage;
-
-import java.sql.Driver;
-import java.util.concurrent.TimeUnit;
+import pageobjects.PagePage;
 
 /**
  * Created by NISCHIT ARYAL on 8/26/2016.

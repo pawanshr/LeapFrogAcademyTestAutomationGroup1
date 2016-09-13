@@ -16,6 +16,7 @@ public class Directpost {
 
     @Test
     public void Direcpost(){
+
         this.dvr = new FirefoxDriver();
         this.dvr.get("https://wordpress.com/wp-login.php");
         LoginPage loginPage = new LoginPage(dvr);
