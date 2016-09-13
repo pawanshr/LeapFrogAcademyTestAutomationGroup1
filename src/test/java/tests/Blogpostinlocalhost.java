@@ -42,7 +42,10 @@ public class Blogpostinlocalhost extends BaseTest {
         System.out.println("Title is Set");
         afterpostsclick.selectvisualoption();
         afterpostsclick.setThebody(forBodyContent);
+
+        Thread.sleep(4000);
         afterpostsclick.savethepost();
+
         System.out.println("Clicked Saved!");
         afterpostsclick.trashthepost(driver);
 
