@@ -43,9 +43,10 @@ public class Secondpageafterlogin {
 
     public String checkforusersoption(){return usersOption.getText();}
 
-    public void movetohowdyadminandlogout() {
+    public void movetohowdyadminandlogout() throws InterruptedException {
         Actions actobj = new Actions(dvr);
-        actobj.moveToElement(howdyadminbutton).perform();
+        actobj.moveToElement(howdyadminbutton).build().perform();
+        Thread.sleep(5000);
         actobj.moveToElement(logoutoption).click().build().perform();
     }
 }

@@ -3,6 +3,7 @@ package pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,11 +40,15 @@ public class LoggedinPage {
     //SWITCH TO DEFAULT FRAME
     @FindBy(className = "web-preview__frame")
     public WebElement defaultFrame;
+
     @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[2]/div[2]/div[1]/div[3]/button")
     WebElement previewButton;
 
+    @FindBy(id = "wp-admin-bar-top-secondary")
+    WebElement howdyLink;
+
     //@FindBy(xpath = "html/body/div[7]/div/div[2]/div[1]/button")
-    @FindBy (className = "web-preview__close")
+    @FindBy(className = "web-preview__close")
     WebElement closeButton;
 
     @FindBy(xpath = ".//*[@id='primary']/div/div[2]/div[2]/div[2]/div[1]/div[3]/div/button[1]")
@@ -118,5 +123,11 @@ public class LoggedinPage {
         dialogTrashButton.click();
     }
 
+    public void logout() {
+        Actions actions = new Actions(dvr);
+        actions.moveToElement(howdyLink).perform();
 
+        //// TODO: 9/11/2016
+        //write code to click on logout link
+    }
 }

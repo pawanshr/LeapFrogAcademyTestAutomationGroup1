@@ -18,7 +18,7 @@ public class Blogpostinlocalhost extends BaseTest {
             "Usu euismod delenit cu. No sea torquatos forensibus theophrastus, mea ad modo liberavisse. No quo unum ubique iudicabit. Ei usu choro scripserit repudiandae, sale intellegat ad eam, ad has primis adipisci. Semper laoreet veritus no ius, eos percipitur consectetuer te.\n";
 
     @Test
-    public void gotothePosts(){
+    public void gotothePosts() throws InterruptedException {
         Secondpageafterlogin afterlogin = new Secondpageafterlogin(driver);
         Pageafterpostsclick afterpostsclick = new Pageafterpostsclick(driver);
 
