@@ -2,6 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class Secondpageafterlogin {
 
+
     WebDriver dvr;
+
 
     public Secondpageafterlogin(WebDriver driver){
         this.dvr =driver;
@@ -26,6 +29,12 @@ public class Secondpageafterlogin {
     @FindBy(xpath = ".//*[@id='menu-users']/a/div[3]")
     WebElement usersOption;
 
+    @FindBy(id="wp-admin-bar-my-account")
+    WebElement howdyadminbutton;
+
+    @FindBy(xpath = ".//*[@id='wp-admin-bar-logout']/a")
+    WebElement logoutoption;
+
     public void clickthePosts(){
         forblogposts.click();
     }
@@ -34,4 +43,10 @@ public class Secondpageafterlogin {
 
     public String checkforusersoption(){return usersOption.getText();}
 
+    public void movetohowdyadminandlogout() throws InterruptedException {
+        Actions actobj = new Actions(dvr);
+        actobj.moveToElement(howdyadminbutton).build().perform();
+        Thread.sleep(5000);
+        actobj.moveToElement(logoutoption).click().build().perform();
+    }
 }

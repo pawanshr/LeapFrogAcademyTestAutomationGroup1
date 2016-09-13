@@ -28,8 +28,10 @@ public class BaseTest {
         Assert.assertEquals("Username or Email",localloginPage.checkforUsernameofEmailLabel());
         Assert.assertEquals("Password",localloginPage.checkforPasswordLabel());
 
-        loginPage.setUsername("admind");
+
+        loginPage.setUsername("admin");
         loginPage.setPassword("admin");
+
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
@@ -37,6 +39,6 @@ public class BaseTest {
 
     @After
     public void tearDown() {
-        driver.quit();
+        System.out.println("All Done Boss!");
     }
 }
