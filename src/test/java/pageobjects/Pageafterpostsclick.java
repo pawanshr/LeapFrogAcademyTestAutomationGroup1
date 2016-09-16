@@ -75,7 +75,8 @@ public class Pageafterpostsclick {
 
     public void savethepost(){
         //this.dvr =driver;
-        dvr.switchTo().defaultContent();
+        dvr.switchTo().parentFrame();
+        //dvr.switchTo().defaultContent();
         saveasdraftbutton.submit();
     }
 
