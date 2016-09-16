@@ -31,12 +31,10 @@ public class BaseTest {
 
         loginPage.setUsername("admin");
         loginPage.setPassword("admin");
-<<<<<<< HEAD
+
         //loginPage.setPassword("qwerty123");
         //loginPage.setPassword("aruna");
-=======
 
->>>>>>> ad16ec710077aa34393fed71a36c5197fdbdf205
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
