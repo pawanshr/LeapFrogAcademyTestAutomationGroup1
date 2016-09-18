@@ -34,7 +34,7 @@ public class BaseTest {
 
 
         loginPage.setUsername("admin");
-        loginPage.setPassword("admin");
+        loginPage.setPassword("qwerty123");
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
