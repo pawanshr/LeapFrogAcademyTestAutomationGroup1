@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.TaxLoginPage;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by i80921 on 9/13/2016.
  */
@@ -17,8 +19,10 @@ public class TaxLoginTest {
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.ie.driver", "src/test/resources/IEDriverServer.exe");
+        driver = new FirefoxDriver();
         driver.get("http://110.44.116.135:24888/munerp/Tax/Home/Login");
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
     }
 
@@ -30,7 +34,7 @@ public class TaxLoginTest {
         taxLoginPage.setUsername("admin");
         taxLoginPage.setPassword("admin");
     }
-
+    
     @After
     public void teardown() {
         driver.quit();

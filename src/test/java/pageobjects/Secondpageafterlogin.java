@@ -24,6 +24,9 @@ public class Secondpageafterlogin {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id = "adminmenu")
+    WebElement leftMenus;
+
     @FindBy(xpath =  ".//*[@id='menu-posts']/a/div[3]")
     WebElement forblogposts;
 
@@ -55,20 +58,13 @@ public class Secondpageafterlogin {
     }
 
     public void  listAllelements(){
+        List<WebElement> leftMenuList = dvr.findElements(By.className("wp-menu-name"));
 
-        String [] actualElements={"Appearance","Plugins","Users"};
+        System.out.println(leftMenuList.get(3).getText());
 
-        By mySelector = By.id("adminmenu");
-        List<WebElement> myElements = new ArrayList<WebElement>();
-        myElements=dvr.findElements(mySelector);
-
-        System.out.println(myElements.get(2).getText());
-
-        /*
-        for(WebElement e : myElements) {
-            System.out.println(e.getText());
+        for(WebElement element: leftMenuList) {
+            System.out.println(element.getText());
         }
-        */
     }
 
 }
