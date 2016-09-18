@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.FirstLoginPage;
 import pageobjects.LoginPage;
@@ -18,8 +19,13 @@ public class BaseTest {
 
     @Before
     public void setupTestMethod() {
+        //System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+        //driver=new ChromeDriver();
+
         this.driver = new FirefoxDriver();
         this.driver.get("http://localhost/wordpress/wp-login.php");
+
+        driver.manage().window().maximize();
 
         FirstLoginPage localloginPage = new FirstLoginPage(driver);
         LoginPage loginPage = new LoginPage(driver);
