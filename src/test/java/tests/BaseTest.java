@@ -25,6 +25,8 @@ public class BaseTest {
         this.driver = new FirefoxDriver();
         this.driver.get("http://localhost/wordpress/wp-login.php");
 
+        driver.manage().window().maximize();
+
         FirstLoginPage localloginPage = new FirstLoginPage(driver);
         LoginPage loginPage = new LoginPage(driver);
 
@@ -34,7 +36,7 @@ public class BaseTest {
 
 
         loginPage.setUsername("admin");
-        loginPage.setPassword("qwerty123");
+        loginPage.setPassword("admin");
         loginPage.login();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
